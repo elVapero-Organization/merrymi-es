@@ -17,6 +17,181 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest" />
+    <!-- TODO: verify if https://merrymi.es/ is the final production URL or if this landing page should resolve to https://www.elvapero.es/. -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "OnlineStore",
+                    "@id": "https://merrymi.es/#organization",
+                    "name": "MerryMi",
+                    "url": "https://merrymi.es/",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://merrymi.es/favicon-96x96.png"
+                    },
+                    "description": "MerryMi vapers desechables y cigarrillos electronicos en Espana.",
+                    "brand": {
+                        "@type": "Brand",
+                        "name": "MerryMi"
+                    },
+                    "contactPoint": [
+                        {
+                            "@type": "ContactPoint",
+                            "contactType": "customer support",
+                            "email": "info@elvapero.es",
+                            "telephone": "+48 573 581 194",
+                            "areaServed": "ES",
+                            "availableLanguage": "es-ES"
+                        }
+                    ],
+                    "areaServed": {
+                        "@type": "Country",
+                        "name": "Spain"
+                    },
+                    "availableLanguage": "es-ES"
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://merrymi.es/#website",
+                    "url": "https://merrymi.es/",
+                    "name": "MerryMi",
+                    "inLanguage": "es-ES",
+                    "publisher": {
+                        "@id": "https://merrymi.es/#organization"
+                    }
+                },
+                {
+                    "@type": "BreadcrumbList",
+                    "@id": "https://merrymi.es/#breadcrumbs",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "Inicio",
+                            "item": "https://merrymi.es/"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Productos",
+                            "item": "https://merrymi.es/#products"
+                        }
+                    ]
+                },
+                {
+                    "@type": "CollectionPage",
+                    "@id": "https://merrymi.es/#collection-page",
+                    "url": "https://merrymi.es/#products",
+                    "name": "MerryMi Productos",
+                    "description": "Coleccion destacada de vapers desechables MerryMi.",
+                    "inLanguage": "es-ES",
+                    "isPartOf": {
+                        "@id": "https://merrymi.es/#website"
+                    },
+                    "about": {
+                        "@id": "https://merrymi.es/#organization"
+                    },
+                    "breadcrumb": {
+                        "@id": "https://merrymi.es/#breadcrumbs"
+                    },
+                    "mainEntity": {
+                        "@id": "https://merrymi.es/#itemlist"
+                    }
+                },
+                {
+                    "@type": "ItemList",
+                    "@id": "https://merrymi.es/#itemlist",
+                    "name": "MerryMi Productos",
+                    "numberOfItems": 8,
+                    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "item": {
+                                "@type": "Product",
+                                "name": "MerryMi Blade 30K 5%",
+                                "url": "https://elvapero.es/products/merrymi-blade-30k-caladas-30000",
+                                "image": "https://merrymi.es/images/products/MerryMi-Blade-30K-Vaper-Desechable-Cigarrillo-Electronico-30000-Caladas-Dragon-Fruit-Ice.jpg"
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "item": {
+                                "@type": "Product",
+                                "name": "MerryMi WiFlux 24K 5%",
+                                "url": "https://elvapero.es/products/merrymi-wiflux-24k-caladas-24000",
+                                "image": "https://merrymi.es/images/products/MerryMi-Blade-30K-Vaper-Desechable-Cigarrillo-Electronico-30000-Caladas-Strawberry-cherry.jpg"
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "item": {
+                                "@type": "Product",
+                                "name": "MerryMi M-Mecha 16K 3%",
+                                "url": "https://elvapero.es/products/merrymi-m-mecha-16k-caladas-16000",
+                                "image": "https://merrymi.es/images/products/MerryMi-Mecha-16K-Vaper-Desechable-Cigarrillo-Electronico-16000-Caladas-Dragon-Fruit-Ice.jpg"
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 4,
+                            "item": {
+                                "@type": "Product",
+                                "name": "MerryMi MK20K 5%",
+                                "url": "https://elvapero.es/products/merrymi-mk20000-20k-caladas-20000",
+                                "image": "https://merrymi.es/images/products/MerryMi-MK20K-Vaper-Desechable-Cigarrillo-Electronico-20000-Caladas-Lime-Mojito.jpg"
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 5,
+                            "item": {
+                                "@type": "Product",
+                                "name": "MerryMi Panda X 40K 5%",
+                                "url": "https://elvapero.es/products/merrymi-panda-x-40k-caladas-40000",
+                                "image": "https://merrymi.es/images/products/MerryMi-Panda-40K-Vaper-Desechable-Cigarrillo-Electronico-40000-Caladas-Frozen-Grape.jpg"
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 6,
+                            "item": {
+                                "@type": "Product",
+                                "name": "MerryMi Mecha Pro 35K 5%",
+                                "url": "https://elvapero.es/products/merrymi-mecha-pro-35k-caladas-35000",
+                                "image": "https://merrymi.es/images/products/MerryMi-Mecha-Pro-35K-Vaper-Desechable-Cigarrillo-Electronico-35000-Caladas.jpg"
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 7,
+                            "item": {
+                                "@type": "Product",
+                                "name": "MerryMi Kitty 20K 3%",
+                                "url": "https://elvapero.es/products/merrymi-kitty-20k-caladas-20000",
+                                "image": "https://merrymi.es/images/products/MerryMi-Kitty-20K-Vaper-Desechable-Cigarrillo-Electronico-20000-Caladas.jpg"
+                            }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 8,
+                            "item": {
+                                "@type": "Product",
+                                "name": "MerryMi Mecha X 28 5%",
+                                "url": "https://elvapero.es/products/merrymi-mecha-x-28k-caladas-28000",
+                                "image": "https://merrymi.es/images/products/MerryMi-Mecha-X-28K-Vaper-Desechable-Cigarrillo-Electronico-28000-Caladas-Buch%C3%B3w-Grape-Ice.png"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
 </head>
 
 <body>
