@@ -705,6 +705,30 @@ img {
     transform: scale(1.05);
 }
 
+.hero-product-caption {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--color-text-light);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.hero-product-badge {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #ff4444;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.45);
+}
+
 /* Image Glow */
 .image-glow {
     position: absolute;
@@ -774,13 +798,30 @@ img {
    3D PRODUCT CAROUSEL SECTION
    ============================================ */
 .product-carousel-3d-section {
+    position: relative;
+    isolation: isolate;
     padding: 100px 0;
-    background-color: #2a2a2a;
+    background:
+        radial-gradient(ellipse 65% 55% at 12% 18%, rgba(0, 196, 161, 0.20), transparent 72%),
+        radial-gradient(ellipse 58% 48% at 88% 74%, rgba(23, 183, 220, 0.18), transparent 74%),
+        radial-gradient(ellipse 45% 38% at 52% 50%, rgba(174, 255, 0, 0.08), transparent 76%),
+        linear-gradient(145deg, #07131b 0%, #101f29 48%, #071116 100%);
     overflow: hidden;
+}
+
+.product-carousel-3d-section > .container > .section-title {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
 }
 
 .carousel-3d-wrapper {
     position: relative;
+    z-index: 1;
     margin: 60px auto;
     max-width: 1200px;
 }
@@ -886,6 +927,25 @@ img {
     justify-content: center;
     overflow: hidden;
     border-radius: 24px;
+}
+
+.product-card-3d[data-product-model] .product-image-3d {
+    background-size: 72% auto;
+    background-position: center 16px;
+    background-color: #151824;
+}
+
+.product-card-3d[data-product-model] .image-overlay {
+    background: linear-gradient(180deg,
+            rgba(9, 16, 28, 0.02) 0%,
+            rgba(9, 16, 28, 0.12) 45%,
+            rgba(9, 16, 28, 0.94) 68%,
+            rgba(9, 16, 28, 0.99) 100%);
+}
+
+.product-card-3d[data-product-model] .product-info-overlay {
+    padding-top: 24px;
+    background: linear-gradient(180deg, transparent, rgba(9, 16, 28, 0.76) 28%);
 }
 
 
@@ -1154,11 +1214,119 @@ img {
 }
 
 /* ============================================
+   MERRYMI PRODUCT CATALOGUE
+   ============================================ */
+.merrymi-catalog-section {
+    padding: 96px 0;
+    background: #202020;
+}
+
+.merrymi-catalog-title {
+    margin: 0 0 46px;
+    color: beige;
+    font-family: var(--font-primary);
+    font-size: clamp(32px, 4vw, 52px);
+    text-align: center;
+}
+
+.merrymi-catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.merrymi-catalog-card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 390px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(200, 255, 0, 0.18);
+    border-radius: 22px;
+    background: radial-gradient(circle at 20% 10%, rgba(200, 255, 0, 0.14), transparent 45%), linear-gradient(145deg, #2e3342, #12151e);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.merrymi-catalog-card:nth-child(3n + 2) {
+    background: radial-gradient(circle at 90% 8%, rgba(96, 208, 255, 0.22), transparent 43%), linear-gradient(145deg, #243243, #101724);
+}
+
+.merrymi-catalog-card:nth-child(3n) {
+    background: radial-gradient(circle at 50% 0%, rgba(255, 149, 49, 0.2), transparent 45%), linear-gradient(145deg, #3c2b27, #171419);
+}
+
+.merrymi-catalog-card img {
+    width: 100%;
+    height: 255px;
+    margin-bottom: 18px;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 16px 16px rgba(0, 0, 0, 0.35));
+}
+
+.merrymi-catalog-card h3 {
+    min-height: 2.7em;
+    margin: 0 0 16px;
+    color: #fff;
+    font-family: var(--font-primary);
+    font-size: 19px;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.merrymi-catalog-card a {
+    width: 100%;
+    margin-top: auto;
+    padding: 13px 16px;
+    border-radius: 999px;
+    background: #c8ff00;
+    color: #0a0a1a;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.merrymi-catalog-card a:hover,
+.merrymi-catalog-card a:focus-visible {
+    background: #d9ff4a;
+    transform: translateY(-2px);
+}
+
+.merrymi-catalog-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: #c8ff00;
+    color: #0a0a1a;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+}
+
+.merrymi-catalog-badge--sale {
+    background: #ff4444;
+    color: #fff;
+}
+
+/* ============================================
    RESPONSIVE DESIGN FOR 3D CAROUSEL
    ============================================ */
 
 /* Tablet */
 @media (max-width: 1024px) {
+    .merrymi-catalog-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .carousel-3d-container {
         perspective: 1500px;
         min-height: 500px;
@@ -1223,6 +1391,46 @@ img {
 
 /* Mobile */
 @media (max-width: 768px) {
+    .merrymi-catalog-section {
+        padding: 64px 0;
+    }
+
+    .merrymi-catalog-title {
+        margin-bottom: 30px;
+    }
+
+    .merrymi-catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .merrymi-catalog-card {
+        min-height: 330px;
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .merrymi-catalog-card img {
+        height: 205px;
+        margin-bottom: 12px;
+    }
+
+    .merrymi-catalog-card h3 {
+        min-height: 2.7em;
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    .hero-product-caption {
+        left: 16px;
+        bottom: 16px;
+        font-size: 12px;
+    }
+
+    .hero-product-badge {
+        padding: 6px 10px;
+    }
+
     .product-carousel-3d-section {
         padding: 60px 0;
     }
@@ -1334,6 +1542,39 @@ img {
 
 /* Small Mobile */
 @media (max-width: 480px) {
+    .merrymi-catalog-section {
+        padding: 52px 0;
+    }
+
+    .merrymi-catalog-grid {
+        gap: 10px;
+    }
+
+    .merrymi-catalog-card {
+        min-height: 286px;
+        padding: 10px;
+    }
+
+    .merrymi-catalog-card img {
+        height: 166px;
+    }
+
+    .merrymi-catalog-card h3 {
+        font-size: 14px;
+    }
+
+    .merrymi-catalog-card a {
+        padding: 11px 8px;
+        font-size: 11px;
+    }
+
+    .merrymi-catalog-badge {
+        top: 10px;
+        right: 10px;
+        padding: 5px 8px;
+        font-size: 9px;
+    }
+
     .product-card-3d {
         width: 280px;
     }
@@ -2448,7 +2689,7 @@ footer a {
 }
 
 .footer-logo img {
-    width: 100px;
+    width: 72px;
     height: auto;
 }
 
@@ -2578,7 +2819,7 @@ footer svg {
 
     .footer-logo img {
         object-fit: cover;
-        width: 90px;
+        width: 64px;
     }
 
     .footer-cont {

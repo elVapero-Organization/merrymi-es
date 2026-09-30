@@ -50,7 +50,19 @@ class Carousel3D {
 
         if (!this.container || !this.stage) return;
 
-        this.cards = this.stage.querySelectorAll('.product-card-3d');
+        const sliderModels = new Set([
+            'blade-max-90k',
+            'mecha-twist-75k',
+            'mecha-x-36k',
+            'panda-twins-40k'
+        ]);
+        this.cards = Array.from(this.stage.querySelectorAll('.product-card-3d')).filter(card => {
+            const isFeaturedCard = Number(card.dataset.index) < 4 && sliderModels.has(card.dataset.productModel);
+            if (isFeaturedCard) return true;
+            card.remove();
+            return false;
+        });
+        this.cards.forEach((card, index) => card.dataset.index = index);
         this.currentIndex = 0;
         this.totalCards = this.cards.length;
 
@@ -77,7 +89,10 @@ class Carousel3D {
             if (bgImageEl) {
                 const bgUrl = bgImageEl.getAttribute('data-bg-image');
                 if (bgUrl) {
-                    bgImageEl.style.backgroundImage = `url('${bgUrl}')`;
+                    const background = card.dataset.productModel
+                        ? `linear-gradient(145deg, rgba(45, 64, 83, 0.34), rgba(12, 14, 23, 0.48)), url('${bgUrl}')`
+                        : `url('${bgUrl}')`;
+                    bgImageEl.style.backgroundImage = background;
                 }
             }
         });
